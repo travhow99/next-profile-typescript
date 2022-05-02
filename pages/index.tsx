@@ -1,15 +1,25 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { Grid } from '@mui/material';
+import Link from 'next/link';
+import Jumbotron from '../components/Jumbotron';
+import Layout from '../components/Layout';
+import TechnologyList from '../components/Technologies';
 
 const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+	<Layout title="Travis Howell - Full Stack Web Developer">
+		<Jumbotron />
 
-export default IndexPage
+		<Grid container spacing={4}>
+			<Grid item xs={4}>
+				<TechnologyList start={0} />
+			</Grid>
+			<Grid item xs={4}>
+				<TechnologyList start={1} />
+			</Grid>
+			<Grid item xs={4}>
+				<TechnologyList start={2} />
+			</Grid>
+		</Grid>
+	</Layout>
+);
+
+export default IndexPage;
