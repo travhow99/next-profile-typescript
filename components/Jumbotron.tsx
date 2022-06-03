@@ -1,23 +1,34 @@
-import { Box, Button, styled } from '@mui/material';
+import { Box, Button, styled, Typography } from '@mui/material';
 
 const Jumbotron = () => {
 	return (
 		<Box
 			sx={{
-				minHeight: '90vh',
+				minHeight: '100vh',
 				display: 'flex',
 				flexDirection: 'column',
 				backgroundImage: `url('/images/hero-image.jpg')`,
 				color: 'white',
-				padding: '0 16px',
+				padding: '12.5%',
 				justifyContent: 'center',
 			}}
 		>
-			<h1>Travis Howell</h1>
+			{/* <h1>Travis Howell</h1> */}
+			<Typography
+				component={'h1'}
+				variant="h1"
+				sx={{
+					fontSize: '8rem',
+				}}
+			>
+				Travis Howell
+			</Typography>
 			<p className="lead">
 				Experienced & Versatile Full Stack Web Developer
 			</p>
-			<Button>View Resume</Button>
+			<div>
+				<Button variant="outlined">View Resume</Button>
+			</div>
 		</Box>
 	);
 };
