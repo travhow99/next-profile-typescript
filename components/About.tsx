@@ -82,19 +82,79 @@ const About = () => {
 							onChange={handleChange}
 							aria-label="basic tabs example"
 						>
-							<Tab label="Item One" {...a11yProps(0)} />
-							<Tab label="Item Two" {...a11yProps(1)} />
-							<Tab label="Item Three" {...a11yProps(2)} />
+							<Tab
+								sx={{ color: 'white' }}
+								label="Bio"
+								{...a11yProps(0)}
+							/>
+							<Tab
+								sx={{ color: 'white' }}
+								label="Experience"
+								{...a11yProps(1)}
+							/>
+							<Tab
+								sx={{ color: 'white' }}
+								label="Specializations"
+								{...a11yProps(2)}
+							/>
 						</Tabs>
 					</Box>
 					<TabPanel value={value} index={0}>
-						Item One
+						"Sed ut perspiciatis unde omnis iste natus error sit
+						voluptatem accusantium doloremque laudantium, totam rem
+						aperiam, eaque ipsa quae ab illo inventore veritatis et
+						quasi architecto beatae vitae dicta sunt explicabo. Nemo
+						enim ipsam voluptatem quia voluptas sit aspernatur aut
+						odit aut fugit, sed quia consequuntur magni dolores eos
+						qui ratione voluptatem sequi nesciunt. Neque porro
+						quisquam est, qui dolorem ipsum quia dolor sit amet,
+						consectetur, adipisci velit, sed quia non numquam eius
+						modi tempora incidunt ut labore et dolore magnam aliquam
+						quaerat voluptatem. Ut enim ad minima veniam, quis
+						nostrum exercitationem ullam corporis suscipit
+						laboriosam, nisi ut aliquid ex ea commodi consequatur?
+						Quis autem vel eum iure reprehenderit qui in ea
+						voluptate velit esse quam nihil molestiae consequatur,
+						vel illum qui dolorem eum fugiat quo voluptas nulla
+						pariatur?"
 					</TabPanel>
 					<TabPanel value={value} index={1}>
-						Item Two
+						"Sed ut perspiciatis unde omnis iste natus error sit
+						voluptatem accusantium doloremque laudantium, totam rem
+						aperiam, eaque ipsa quae ab illo inventore veritatis et
+						quasi architecto beatae vitae dicta sunt explicabo. Nemo
+						enim ipsam voluptatem quia voluptas sit aspernatur aut
+						odit aut fugit, sed quia consequuntur magni dolores eos
+						qui ratione voluptatem sequi nesciunt. Neque porro
+						quisquam est, qui dolorem ipsum quia dolor sit amet,
+						consectetur, adipisci velit, sed quia non numquam eius
+						modi tempora incidunt ut labore et dolore magnam aliquam
+						quaerat voluptatem. Ut enim ad minima veniam, quis
+						nostrum exercitationem ullam corporis suscipit
+						laboriosam, nisi ut aliquid ex ea commodi consequatur?
+						Quis autem vel eum iure reprehenderit qui in ea
+						voluptate velit esse quam nihil molestiae consequatur,
+						vel illum qui dolorem eum fugiat quo voluptas nulla
+						pariatur?"
 					</TabPanel>
 					<TabPanel value={value} index={2}>
-						Item Three
+						"Sed ut perspiciatis unde omnis iste natus error sit
+						voluptatem accusantium doloremque laudantium, totam rem
+						aperiam, eaque ipsa quae ab illo inventore veritatis et
+						quasi architecto beatae vitae dicta sunt explicabo. Nemo
+						enim ipsam voluptatem quia voluptas sit aspernatur aut
+						odit aut fugit, sed quia consequuntur magni dolores eos
+						qui ratione voluptatem sequi nesciunt. Neque porro
+						quisquam est, qui dolorem ipsum quia dolor sit amet,
+						consectetur, adipisci velit, sed quia non numquam eius
+						modi tempora incidunt ut labore et dolore magnam aliquam
+						quaerat voluptatem. Ut enim ad minima veniam, quis
+						nostrum exercitationem ullam corporis suscipit
+						laboriosam, nisi ut aliquid ex ea commodi consequatur?
+						Quis autem vel eum iure reprehenderit qui in ea
+						voluptate velit esse quam nihil molestiae consequatur,
+						vel illum qui dolorem eum fugiat quo voluptas nulla
+						pariatur?"
 					</TabPanel>
 				</Grid>
 			</Grid>
