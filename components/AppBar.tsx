@@ -19,9 +19,11 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const ResponsiveAppBar = (/* { itemName } */) => {
 	const [anchorTarget, setAnchorTarget] = useState<null | HTMLElement>(null);
 
-	/* useEffect(() => {
-		setAnchorTarget(document.getElementById(itemName));
-	}, [itemName]); */
+	useEffect(() => {
+		if (anchorTarget) {
+			anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	}, [anchorTarget]);
 
 	function handleClick(event: MouseEvent<HTMLElement>) {
 		const dataTarget = event.currentTarget.getAttribute('data-target');
@@ -29,8 +31,6 @@ const ResponsiveAppBar = (/* { itemName } */) => {
 		event.preventDefault();
 
 		setAnchorTarget(document.getElementById(dataTarget));
-		console.log(anchorTarget);
-		anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	}
 
 	/* const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
