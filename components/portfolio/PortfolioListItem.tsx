@@ -1,5 +1,6 @@
 import { Info } from '@mui/icons-material';
 import { IconButton, ImageListItem, ImageListItemBar } from '@mui/material';
+import Image from 'next/image';
 import { useState } from 'react';
 import { ProfileItem } from '../../interfaces/ProfileItem';
 import PortfolioItemModal from './PortfolioItemModal';
@@ -16,12 +17,19 @@ const PortfolioListItem = ({ item }: ItemProps) => {
 	return (
 		<div>
 			<ImageListItem key={item.id}>
-				<img
+				<Image
+					src={item.img}
+					alt={item.title}
+					width={500}
+					height={500}
+					layout="responsive"
+				/>
+				{/* <img
 					src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
 					srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
 					alt={item.title}
 					loading="lazy"
-				/>
+				/> */}
 				<ImageListItemBar
 					title={item.title}
 					subtitle={item.subtitle}

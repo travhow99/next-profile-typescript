@@ -12,6 +12,7 @@ const Portfolio = () => {
 
 	return (
 		<Box
+			id="portfolio"
 			sx={{
 				minHeight: '100vh',
 				display: 'flex',

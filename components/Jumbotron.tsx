@@ -3,6 +3,7 @@ import { Box, Button, styled, Typography } from '@mui/material';
 const Jumbotron = () => {
 	return (
 		<Box
+			id="home"
 			sx={{
 				minHeight: '100vh',
 				display: 'flex',

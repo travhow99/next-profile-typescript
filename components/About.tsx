@@ -44,6 +44,7 @@ const About = () => {
 
 	return (
 		<Box
+			id="about"
 			sx={{
 				minHeight: '100vh',
 				display: 'flex',

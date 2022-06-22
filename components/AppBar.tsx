@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,12 +10,30 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { MouseEvent, SyntheticEvent, useEffect, useState } from 'react';
+import { ExtendButtonBase } from '@mui/material';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const sections = ['home', 'about', 'portfolio', 'contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const ResponsiveAppBar = () => {
-	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+const ResponsiveAppBar = (/* { itemName } */) => {
+	const [anchorTarget, setAnchorTarget] = useState<null | HTMLElement>(null);
+
+	/* useEffect(() => {
+		setAnchorTarget(document.getElementById(itemName));
+	}, [itemName]); */
+
+	function handleClick(event: MouseEvent<HTMLElement>) {
+		const dataTarget = event.currentTarget.getAttribute('data-target');
+		console.log('got click', dataTarget);
+		event.preventDefault();
+
+		setAnchorTarget(document.getElementById(dataTarget));
+		console.log(anchorTarget);
+		anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
+
+	/* const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
 		null
 	);
 	const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
@@ -36,7 +53,7 @@ const ResponsiveAppBar = () => {
 
 	const handleCloseUserMenu = () => {
 		setAnchorElUser(null);
-	};
+	}; */
 
 	return (
 		<AppBar position="static">
@@ -48,7 +65,7 @@ const ResponsiveAppBar = () => {
 						component="div"
 						sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
 					>
-						LOGO
+						TH
 					</Typography>
 
 					<Box
@@ -62,14 +79,14 @@ const ResponsiveAppBar = () => {
 							aria-label="account of current user"
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
-							onClick={handleOpenNavMenu}
+							// onClick={handleOpenNavMenu}
 							color="inherit"
 						>
 							<MenuIcon />
 						</IconButton>
 						<Menu
-							id="menu-appbar"
-							anchorEl={anchorElNav}
+							data-target="menu-appbar"
+							// anchorEl={anchorElNav}
 							anchorOrigin={{
 								vertical: 'bottom',
 								horizontal: 'left',
@@ -79,16 +96,18 @@ const ResponsiveAppBar = () => {
 								vertical: 'top',
 								horizontal: 'left',
 							}}
-							open={Boolean(anchorElNav)}
-							onClose={handleCloseNavMenu}
+							open={false /* Boolean(anchorElNav) */}
+							// onClose={handleCloseNavMenu}
 							sx={{
 								display: { xs: 'block', md: 'none' },
 							}}
 						>
-							{pages.map((page) => (
+							{sections.map((page) => (
 								<MenuItem
+									data-target={page}
 									key={page}
-									onClick={handleCloseNavMenu}
+									// onClick={handleCloseNavMenu}
+									onClick={handleClick}
 								>
 									<Typography textAlign="center">
 										{page}
@@ -106,7 +125,7 @@ const ResponsiveAppBar = () => {
 							display: { xs: 'flex', md: 'none' },
 						}}
 					>
-						LOGO
+						TH
 					</Typography>
 					<Box
 						sx={{
@@ -114,11 +133,13 @@ const ResponsiveAppBar = () => {
 							display: { xs: 'none', md: 'flex' },
 						}}
 					>
-						{pages.map((page) => (
+						{sections.map((page) => (
 							<Button
+								data-target={page}
 								key={page}
-								onClick={handleCloseNavMenu}
+								// onClick={handleCloseNavMenu}
 								sx={{ my: 2, color: 'white', display: 'block' }}
+								onClick={handleClick}
 							>
 								{page}
 							</Button>

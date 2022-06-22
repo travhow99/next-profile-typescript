@@ -1,4 +1,5 @@
 import { Backdrop, Box, Fade, Modal, Typography } from '@mui/material';
+import Image from 'next/image';
 import { useState } from 'react';
 import { ProfileItem } from '../../interfaces/ProfileItem';
 
@@ -36,10 +37,12 @@ const PortfolioItemModal = ({ item, open, handleClose }: ItemProps) => {
 			>
 				<Fade in={open}>
 					<Box sx={style}>
-						<img
-							src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-							srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+						<Image
+							src={item.img}
 							alt={item.title}
+							width={500}
+							height={500}
+							layout="responsive"
 						/>
 						<Typography
 							id="transition-modal-title"
